@@ -1,4 +1,40 @@
-const products = [];
+const products = [
+    {
+        id: 1,
+        name: "Ancient Rust",
+        game: "Rust",
+        price: "€5.00",
+        category: "Survival",
+        description: "Fully undetected Rust cheat with instant delivery. Features premium aimbot, full ESP, world ESP, and extensive misc options. Choose your duration — 1 Day, 7 Days, or 30 Days. Compatible with Windows 10/11, Intel/AMD. Secure Boot must be disabled.",
+        shortDesc: "UNDETECTED (WORKING) — Aimbot, ESP, Radar & more. Instant delivery.",
+        icon: "🦀",
+        features: [
+            "UNDETECTED — Working on latest Rust patch",
+            "Instant Delivery via Discord",
+            "Windows 10/11 & Intel/AMD Support",
+            "AIMBOT: Aim key, Smooth, Fov, Bone selection",
+            "Target: Enemies, NPCs, Teammates, Sleepers",
+            "Lock Target with configurable key",
+            "ESP: Box, Name, Weapon, Distance, Skeleton",
+            "ESP: Enemy / Teammate / NPC / Sleeper toggles",
+            "World ESP: Ore, Crates, Animals, Collectables",
+            "World ESP: Deployables, Traps, Transport",
+            "Off Arrows with adjustable range",
+            "Radar display",
+            "MISC: Shotgun Nospread, Thick Bullet",
+            "MISC: Bow Thick Bullet Override, Instant Eoka",
+            "MISC: Always Automatic, Heli Hit Box Override",
+            "FPS limit, Show FPS, Text style config",
+            "Secure Boot Disabled required",
+            "16GB RAM recommended"
+        ],
+        pricing: [
+            { duration: "1 Day", price: "€5.00", stock: 7 },
+            { duration: "7 Days", price: "€21.99", stock: 3 },
+            { duration: "30 Days", price: "€42.99", stock: 3 }
+        ]
+    }
+];
 
 document.addEventListener('DOMContentLoaded', () => {
     const productGrid = document.getElementById('productGrid');
@@ -62,12 +98,31 @@ document.addEventListener('DOMContentLoaded', () => {
             `<li><i class="fas fa-check-circle"></i> ${f}</li>`
         ).join('');
 
+        let pricingHtml = '';
+        if (product.pricing) {
+            pricingHtml = `
+                <div class="modal-pricing">
+                    <h4><i class="fas fa-tag"></i> Pricing & Duration</h4>
+                    <div class="pricing-grid">
+                        ${product.pricing.map(p => `
+                            <div class="pricing-card">
+                                <span class="pricing-duration">${p.duration}</span>
+                                <span class="pricing-amount">${p.price}</span>
+                                <span class="pricing-stock">${p.stock} in stock</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
         modalDetails.innerHTML = `
             <div class="modal-header">
-                <h2><i class="fas fa-crown" style="color: var(--accent-color); font-size: 1.8rem; margin-right: 10px;"></i>${product.name}</h2>
+                <h2>${product.icon || ''} ${product.name}</h2>
                 <p class="modal-game"><i class="fas fa-gamepad"></i> ${product.game}</p>
             </div>
             <p class="modal-description">${product.description}</p>
+            ${pricingHtml}
             <div class="modal-features">
                 <h4><i class="fas fa-bolt"></i> Features & Cheats Included</h4>
                 <ul class="feature-list">
