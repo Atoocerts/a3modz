@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>a3modz | Premium Game Mod Menus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root{--bg:#070a10;--card:rgba(22,27,34,.85);--txt:#e6edf3;--accent:#00f2ff;--accent-glow:rgba(0,242,255,.4);--secondary:#bc13fe;--muted:#8b949e;--w:1200px;--t:all .3s cubic-bezier(.4,0,.2,1)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;overflow-x:hidden;background-image:radial-gradient(ellipse at 20% 50%,rgba(0,242,255,.03) 0%,transparent 50%),radial-gradient(ellipse at 80% 20%,rgba(188,19,254,.03) 0%,transparent 50%),radial-gradient(ellipse at 50% 80%,rgba(0,242,255,.02) 0%,transparent 50%)}
+h1,h2,h3,h4{font-family:'Orbitron',sans-serif;text-transform:uppercase;letter-spacing:1px}
+.container{max-width:var(--w);margin:0 auto;padding:0 20px}
+header{background:rgba(7,10,16,.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);position:fixed;top:0;width:100%;z-index:1000;border-bottom:1px solid rgba(255,255,255,.05)}
+nav{display:flex;justify-content:space-between;align-items:center;height:80px}
+.logo-text{font-family:'Orbitron',sans-serif;font-size:1.6rem;font-weight:900;letter-spacing:3px;background:linear-gradient(135deg,#e6edf3,#a0b3cc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.logo-text span{background:linear-gradient(135deg,var(--accent),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.nav-links{display:flex;list-style:none;align-items:center;gap:8px}
+.nav-links a{text-decoration:none;color:var(--txt);font-weight:600;font-size:.85rem;padding:8px 16px;border-radius:8px;display:flex;align-items:center;gap:8px;transition:var(--t)}
+.nav-links a i{font-size:.9rem}
+.nav-links a:hover{color:var(--accent);background:rgba(0,242,255,.05)}
+.nav-links a.discord-nav{color:#5865F2;background:rgba(88,101,242,.1);border:1px solid rgba(88,101,242,.2)}
+.nav-links a.discord-nav:hover{color:#fff;background:rgba(88,101,242,.3);box-shadow:0 0 20px rgba(88,101,242,.3)}
+.mobile-menu-btn{display:none;flex-direction:column;cursor:pointer;gap:5px}
+.mobile-menu-btn span{width:25px;height:2px;background:var(--txt);border-radius:2px;transition:var(--t)}
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding-top:80px;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 50%,rgba(0,242,255,.05) 0%,transparent 50%),radial-gradient(circle at 70% 50%,rgba(188,19,254,.05) 0%,transparent 50%);animation:float 20s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translate(0,0)}33%{transform:translate(2%,-2%)}66%{transform:translate(-2%,2%)}}
+.hero-content{position:relative;z-index:1;max-width:800px}
+.hero h1{font-size:4.2rem;margin-bottom:20px;line-height:1.1;letter-spacing:2px}
+.hero h1 span{background:linear-gradient(135deg,var(--accent),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;filter:drop-shadow(0 0 30px var(--accent-glow))}
+.hero p{font-size:1.2rem;color:var(--muted);margin-bottom:40px;max-width:600px;line-height:1.8}
+.hero-btns{display:flex;gap:20px;flex-wrap:wrap}
+.btn{padding:14px 32px;border-radius:8px;text-decoration:none;font-weight:700;text-transform:uppercase;font-size:.85rem;letter-spacing:1px;transition:var(--t);cursor:pointer;display:inline-flex;align-items:center;gap:10px;border:none}
+.btn-primary{background:linear-gradient(135deg,var(--accent),#00b4cc);color:#000;position:relative;overflow:hidden}
+.btn-primary::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transition:.5s}
+.btn-primary:hover::before{left:100%}
+.btn-primary:hover{box-shadow:0 0 30px var(--accent-glow),0 0 60px var(--accent-glow);transform:translateY(-3px)}
+.btn-secondary{border:2px solid var(--accent);color:var(--accent);background:transparent}
+.btn-secondary:hover{background:linear-gradient(135deg,var(--accent),#00b4cc);color:#000;box-shadow:0 0 30px var(--accent-glow);transform:translateY(-3px)}
+.products{padding:120px 0}
+.section-header{text-align:center;margin-bottom:60px}
+.section-header h2{font-size:2.8rem;margin-bottom:15px;letter-spacing:2px}
+.section-header h2 span{background:linear-gradient(135deg,var(--accent),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.section-header p{color:var(--muted);font-size:1.1rem}
+.product-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:30px}
+.product-card{background:var(--card);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:30px;transition:var(--t);position:relative;overflow:hidden;cursor:pointer}
+.product-card::after{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(0,242,255,.03) 0%,transparent 50%);opacity:0;transition:var(--t)}
+.product-card:hover{transform:translateY(-10px);border-color:rgba(0,242,255,.3);box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 30px rgba(0,242,255,.05)}
+.product-card:hover::after{opacity:1}
+.product-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--accent),var(--secondary));opacity:0;transition:var(--t)}
+.product-card:hover::before{opacity:1}
+.product-category{font-size:.7rem;text-transform:uppercase;letter-spacing:2px;color:var(--accent);font-weight:700;margin-bottom:15px;display:inline-block;padding:4px 12px;border:1px solid rgba(0,242,255,.2);border-radius:20px}
+.product-card h3{font-size:1.4rem;margin-bottom:10px;position:relative;z-index:1}
+.product-game{font-size:.9rem;color:var(--muted);margin-bottom:15px;display:flex;align-items:center;gap:6px}
+.product-game i{color:var(--accent);font-size:.8rem}
+.product-desc-short{font-size:.85rem;color:var(--muted);line-height:1.5;margin-bottom:20px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.product-card-footer{display:flex;justify-content:space-between;align-items:center;padding-top:20px;border-top:1px solid rgba(255,255,255,.05)}
+.product-price{font-size:1.4rem;font-weight:800;background:linear-gradient(135deg,var(--txt),#a0b3cc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.product-view-btn{font-size:.75rem;text-transform:uppercase;letter-spacing:1px;color:var(--accent);font-weight:600;display:flex;align-items:center;gap:6px;transition:var(--t)}
+.product-card:hover .product-view-btn{gap:10px}
+.contact{padding:100px 0;text-align:center}
+.contact-cta{margin-top:40px}
+.modal{display:none;position:fixed;z-index:2000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.8);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);overflow-y:auto}
+.modal-content{background:rgba(22,27,34,.95);margin:5% auto;padding:50px;border:1px solid rgba(0,242,255,.2);width:90%;max-width:800px;border-radius:20px;position:relative;animation:modalIn .4s cubic-bezier(.4,0,.2,1);box-shadow:0 0 60px rgba(0,242,255,.05)}
+@keyframes modalIn{from{opacity:0;transform:translateY(-30px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+.close-modal{position:absolute;top:20px;right:30px;color:var(--muted);font-size:30px;font-weight:700;cursor:pointer;transition:var(--t);width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,255,255,.05)}
+.close-modal:hover{color:var(--accent);background:rgba(0,242,255,.1);transform:rotate(90deg)}
+.modal-header{margin-bottom:30px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.05)}
+.modal-header h2{font-size:2.2rem;margin-bottom:10px;background:linear-gradient(135deg,#e6edf3,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.modal-game{color:var(--accent);font-weight:600;font-size:1.1rem;display:flex;align-items:center;gap:8px}
+.modal-description{margin-bottom:35px;color:var(--muted);line-height:1.8;font-size:1.05rem}
+.modal-features{margin-bottom:40px}
+.modal-features h4{margin-bottom:20px;font-size:1.1rem;letter-spacing:1px;display:flex;align-items:center;gap:10px}
+.modal-features h4 i{color:var(--accent)}
+.feature-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;list-style:none}
+.feature-list li{padding:12px 18px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.05);border-radius:10px;font-size:.9rem;display:flex;align-items:center;gap:10px;transition:var(--t)}
+.feature-list li:hover{border-color:rgba(0,242,255,.2);background:rgba(0,242,255,.03)}
+.feature-list li i{color:var(--accent);font-size:.85rem}
+.modal-footer{display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.08);padding-top:30px;flex-wrap:wrap;gap:20px}
+.modal-price{font-size:2.2rem;font-weight:900;font-family:'Orbitron',sans-serif;background:linear-gradient(135deg,#e6edf3,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+footer{padding:80px 0 40px;background:linear-gradient(180deg,var(--bg),#05070a);border-top:1px solid rgba(255,255,255,.05)}
+.footer-content{display:grid;grid-template-columns:2fr 1fr 1fr;gap:50px;margin-bottom:50px}
+.footer-logo p{margin-top:15px;color:var(--muted);max-width:300px;font-size:.9rem;line-height:1.7}
+.footer-links h4,.footer-social h4{margin-bottom:20px;font-size:.9rem;letter-spacing:1px;font-family:'Orbitron',sans-serif}
+.footer-links ul,.footer-social ul{list-style:none}
+.footer-links li,.footer-social li{margin-bottom:12px}
+.footer-links a,.footer-social a{text-decoration:none;color:var(--muted);transition:var(--t);font-size:.9rem;display:flex;align-items:center;gap:8px}
+.footer-links a:hover,.footer-social a:hover{color:var(--accent);transform:translateX(3px)}
+.footer-social a i{color:#5865F2;font-size:1.1rem}
+.footer-bottom{text-align:center;padding-top:40px;border-top:1px solid rgba(255,255,255,.05);color:var(--muted);font-size:.85rem}
+.fade-in{opacity:0;transform:translateY(30px);animation:fadeIn .8s cubic-bezier(.4,0,.2,1) forwards}
+.delay-1{animation-delay:.2s}
+.delay-2{animation-delay:.4s}
+@keyframes fadeIn{to{opacity:1;transform:translateY(0)}}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:4px}
+::-webkit-scrollbar-thumb:hover{background:rgba(0,242,255,.3)}
+@media(max-width:968px){.hero h1{font-size:3rem}.footer-content{grid-template-columns:1fr;gap:40px}.modal-content{padding:30px;margin:10% auto}.feature-list{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.nav-links{display:none;position:fixed;top:80px;left:0;width:100%;background:rgba(7,10,16,.98);backdrop-filter:blur(20px);flex-direction:column;padding:30px;gap:5px;border-bottom:1px solid rgba(255,255,255,.05)}.nav-links.active{display:flex}.nav-links li{margin-left:0}.nav-links a{padding:12px 16px;font-size:1rem}.mobile-menu-btn{display:flex}.hero h1{font-size:2.2rem}.hero p{font-size:1rem}.hero-btns{flex-direction:column}.btn{width:100%;justify-content:center}.product-grid{grid-template-columns:1fr}.section-header h2{font-size:2rem}.modal-header h2{font-size:1.6rem}.feature-list{grid-template-columns:1fr}.modal-footer{flex-direction:column;align-items:flex-start}}
+@media(max-width:480px){.hero h1{font-size:1.8rem}.modal-content{padding:20px}}
+</style>
+</head>
+<body>
+<header>
+  <nav class="container">
+    <div class="logo"><span class="logo-text">A3<span>MODZ</span></span></div>
+    <ul class="nav-links">
+      <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#products"><i class="fas fa-gamepad"></i> Products</a></li>
+      <li><a href="https://discord.gg/x2R9GCa6q" target="_blank" class="discord-nav"><i class="fab fa-discord"></i> Discord</a></li>
+      <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+    <div class="mobile-menu-btn"><span></span><span></span><span></span></div>
+  </nav>
+</header>
+<main>
+<section id="home" class="hero">
+  <div class="container hero-content">
+    <h1 class="fade-in">Elevate Your <span>Gaming</span> Experience</h1>
+    <p class="fade-in delay-1">Premium, undetected, and feature-rich mod menus for your favorite titles. Dominate the field with a3modz.</p>
+    <div class="hero-btns fade-in delay-2">
+      <a href="#products" class="btn btn-primary"><i class="fas fa-store"></i> Browse Products</a>
+      <a href="https://discord.gg/x2R9GCa6q" target="_blank" class="btn btn-secondary"><i class="fab fa-discord"></i> Join Discord</a>
+    </div>
+  </div>
+</section>
+<section id="products" class="products">
+  <div class="container">
+    <div class="section-header">
+      <h2>Our <span>Marketplace</span></h2>
+      <p>Select a game to see available menus and features</p>
+    </div>
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+</section>
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-header">
+      <h2>Get in <span>Touch</span></h2>
+      <p>Have questions? Join our Discord for 24/7 support and community discussion.</p>
+    </div>
+    <div class="contact-cta">
+      <a href="https://discord.gg/x2R9GCa6q" target="_blank" class="btn btn-primary"><i class="fab fa-discord"></i> Join Our Discord</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <span class="logo-text">A3<span>MODZ</span></span>
+        <p>The premier destination for high-quality game modifications.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul><li><a href="#home">Home</a></li><li><a href="#products">Products</a></li><li><a href="#contact">Contact</a></li></ul>
+      </div>
+      <div class="footer-social">
+        <h4>Community</h4>
+        <ul><li><a href="https://discord.gg/x2R9GCa6q" target="_blank"><i class="fab fa-discord"></i> Discord</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><p>&copy; 2024 a3modz. All rights reserved.</p></div>
+  </div>
+</footer>
+<div id="productModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <div id="modalDetails"></div>
+  </div>
+</div>
+<script>
+const products=[{id:1,name:"Warzone Advanced Menu",game:"Call of Duty: Warzone",price:"$24.99",category:"FPS",description:"Experience the ultimate tactical advantage in Warzone. Our advanced menu provides undetected features that give you total control over the battlefield.",shortDesc:"Dominate Verdansk with undetected aimbot, ESP, and full unlock tools.",features:["Aimbot with Prediction","Box & Glow ESP","Wallhacks","No Recoil & No Spread","Unlock All Cosmetics","Radar Hack","Player Tracking"]},{id:2,name:"GTA V Chaos Engine",game:"Grand Theft Auto V",price:"$19.99",category:"Action",description:"The most stable and feature-packed menu for Los Santos. Whether you want to grind money or just cause absolute mayhem, Chaos Engine has you covered.",shortDesc:"Money drops, god mode, vehicle spawning — total control in LS.",features:["Stealth Money Drop","God Mode & Invisibility","Teleport to Waypoint","Spawn Any Vehicle","Remote Player Options","Casino Recovery","Session Protections"]},{id:3,name:"Apex Legends Predator Pack",game:"Apex Legends",price:"$29.99",category:"FPS",description:"Climb to Predator rank with ease. Our lightweight Apex menu is designed for performance and safety.",shortDesc:"Smart aim, player glow, recoil control — reach Predator fast.",features:["Smart Aim Assist","Item & Player Glow","Movement Velocity Scripts","No Sway","Recoil Control System","Auto Loot","Hitbox Expansion"]},{id:4,name:"Fortnite Victory Royal",game:"Fortnite",price:"$14.99",category:"Battle Royale",description:"Get that #1 Victory Royale every time. Designed to bypass the latest anti-cheats.",shortDesc:"Soft aim, wallhack, instant builds — win every match.",features:["Soft Aim","Player Wallhack","Instant Build & Edit","Fly Hack (Limited)","No Bloom","Fast Reload","Aim Assist"]},{id:5,name:"Valorant Radiant Edge",game:"Valorant",price:"$34.99",category:"FPS",description:"Premium internal cheat for Valorant. Focus on high security and humanized features.",shortDesc:"Humanized aimbot, skin changer, trigger bot — stay radiant.",features:["Internal Humanized Aimbot","Visible Check ESP","Skin Changer (Client-side)","Mini-map Radar","Trigger Bot","Highly Undetected","Colored ESP"]},{id:6,name:"Minecraft Infinity Mod",game:"Minecraft",price:"$9.99",category:"Sandbox",description:"Break the limits of Minecraft. From anarchy servers to competitive minigames.",shortDesc:"Flight, killaura, x-ray — ultimate Minecraft domination.",features:["Creative Flight","Multi-Aura (KillAura)","X-Ray Vision","Auto-Mine & Scripting","Inventory Manager","Speed Hack","No Fall Damage"]},{id:7,name:"Rust Raid Master",game:"Rust",price:"$22.99",category:"Survival",description:"Dominate the wasteland with the most comprehensive Rust cheat suite.",shortDesc:"ESP, auto-farm, recoil control — rule the wasteland.",features:["Ore & Player ESP","Auto-Farm Scripts","Recoil Control","No Recoil","Silent Aim","Door ESP","Radar"]},{id:8,name:"CS2 Pro Suite",game:"Counter-Strike 2",price:"$27.99",category:"FPS",description:"The ultimate competitive advantage for CS2. Pinpoint accuracy with full visibility features.",shortDesc:"Professional aim, ESP, glow — the edge you need.",features:["Rage & Legit Aimbot","Glow & Chams ESP","Trigger Bot","No Flash","Bunny Hop","Rank Revealer","Skin Changer"]}];
+document.addEventListener('DOMContentLoaded',()=>{
+const grid=document.getElementById('productGrid'),modal=document.getElementById('productModal'),details=document.getElementById('modalDetails'),closeBtn=document.querySelector('.close-modal'),mobileBtn=document.querySelector('.mobile-menu-btn'),navLinks=document.querySelector('.nav-links');
+if(mobileBtn){mobileBtn.addEventListener('click',()=>{navLinks.classList.toggle('active');mobileBtn.classList.toggle('active')});navLinks.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{navLinks.classList.remove('active');mobileBtn.classList.remove('active')}))}
+window.addEventListener('scroll',()=>{const h=document.querySelector('header');h.style.background=window.scrollY>50?'rgba(7,10,16,.95)':'rgba(7,10,16,.85)';h.style.borderBottom=window.scrollY>50?'1px solid rgba(0,242,255,.1)':'1px solid rgba(255,255,255,.05)'});
+products.forEach(p=>{const c=document.createElement('div');c.className='product-card';c.innerHTML='<span class="product-category">'+p.category+'</span><h3>'+p.name+'</h3><p class="product-game"><i class="fas fa-gamepad"></i> '+p.game+'</p><p class="product-desc-short">'+p.shortDesc+'</p><div class="product-card-footer"><span class="product-price">'+p.price+'</span><span class="product-view-btn">View Details <i class="fas fa-arrow-right"></i></span></div>';c.addEventListener('click',()=>openModal(p));grid.appendChild(c)});
+function openModal(p){const fl=p.features.map(f=>'<li><i class="fas fa-check-circle"></i> '+f+'</li>').join('');details.innerHTML='<div class="modal-header"><h2><i class="fas fa-crown" style="color:var(--accent);font-size:1.8rem;margin-right:10px"></i>'+p.name+'</h2><p class="modal-game"><i class="fas fa-gamepad"></i> '+p.game+'</p></div><p class="modal-description">'+p.description+'</p><div class="modal-features"><h4><i class="fas fa-bolt"></i> Features & Cheats Included</h4><ul class="feature-list">'+fl+'</ul></div><div class="modal-footer"><span class="modal-price">'+p.price+'</span><a href="https://discord.gg/x2R9GCa6q" target="_blank" class="btn btn-primary"><i class="fab fa-discord"></i> Purchase on Discord</a></div>';modal.style.display='block';document.body.style.overflow='hidden'}
+closeBtn.addEventListener('click',()=>{modal.style.display='none';document.body.style.overflow='auto'});
+window.addEventListener('click',e=>{if(e.target===modal){modal.style.display='none';document.body.style.overflow='auto'}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.style.display==='block'){modal.style.display='none';document.body.style.overflow='auto'}});
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){const t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();window.scrollTo({top:t.offsetTop-80,behavior:'smooth'})}})})
+});
+</script>
+</body>
+</html>
