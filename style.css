@@ -361,6 +361,26 @@ nav {
     border-radius: 20px;
 }
 
+.product-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(135deg, #ff6b35, #ff2d55);
+    color: #fff;
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    z-index: 2;
+    box-shadow: 0 0 20px rgba(255, 45, 85, 0.4);
+}
+
+.product-card.has-badge {
+    position: relative;
+}
+
 .product-card h3 {
     font-size: 1.4rem;
     margin-bottom: 10px;

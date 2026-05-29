@@ -33,6 +33,44 @@ const products = [
             { duration: "7 Days", price: "€21.99", stock: 3 },
             { duration: "30 Days", price: "€42.99", stock: 3 }
         ]
+    },
+    {
+        id: 2,
+        name: "a3 Scripts",
+        game: "Roblox",
+        price: "€10.99",
+        category: "Scripts",
+        description: "🔥 100+ purchases and counting! Our private Roblox scripts are fully working and undetected. Packed with Aimbot, ESP, and support for 15+ popular Roblox games including Da Hood, Arsenal, Phantom Forces, and more. Lifetime key — buy once, use forever. Windows 10/11, Intel/AMD compatible.",
+        shortDesc: "👁️ PRIVATE WORKING SCRIPTS — 100+ bought! Aimbot, ESP, 15+ games supported.",
+        icon: "👁️",
+        badge: "Popular",
+        features: [
+            "🔥 100+ Purchases — Trusted by the community",
+            "UNDETECTED — Private working scripts",
+            "Instant Delivery via Discord",
+            "Lifetime access — one-time payment",
+            "Windows 10/11 & Intel/AMD Support",
+            "AIMBOT: Enable/Disable, Draw FOV, Smooth",
+            "Triggerbot & Prediction",
+            "ESP: Box ESP, Skeleton, NameTag ESP",
+            "ESP: SnapLine, Head",
+            "SUPPORTED GAMES: Da Hood (Fully Silent-Aim)",
+            "SUPPORTED: Fallen (Semi-Silent Aim) & all copies",
+            "SUPPORTED: Strucid, Rush Point (Silent Aim)",
+            "SUPPORTED: Arsenal, Phantom Forces",
+            "SUPPORTED: Trident Survival, Aftermath",
+            "SUPPORTED: Bad Business, Rivals",
+            "SUPPORTED: Blackhawk Rescue Mission 5, Wild West",
+            "SUPPORTED: Sound Space (Auto-Play)",
+            "SUPPORTED: Fisch (Instant reel, Auto Fish)",
+            "SUPPORTED: Re Ghoul (Custom ESP)",
+            "SUPPORTED: Bladeball (Autoplay)",
+            "MISC: Scripts, Speedhack, Playerlist",
+            "MISC: NoClip, Save Config"
+        ],
+        pricing: [
+            { duration: "Lifetime", price: "€10.99", stock: 3 }
+        ]
     }
 ];
 
@@ -76,8 +114,13 @@ document.addEventListener('DOMContentLoaded', () => {
     products.forEach(product => {
         const card = document.createElement('div');
         card.className = 'product-card';
+        if (product.badge) {
+            card.classList.add('has-badge');
+        }
+        const badgeHtml = product.badge ? `<span class="product-badge">${product.badge}</span>` : '';
         card.innerHTML = `
-            <span class="product-category">${product.category}</span>
+            ${badgeHtml}
+            <span class="product-category">${product.icon || ''} ${product.category}</span>
             <h3>${product.name}</h3>
             <p class="product-game"><i class="fas fa-gamepad"></i> ${product.game}</p>
             <p class="product-desc-short">${product.shortDesc}</p>
