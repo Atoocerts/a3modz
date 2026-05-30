@@ -773,6 +773,11 @@ nav {
 }
 
 /* Review Form */
+.reviews-load-more {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
 .reviews-form-container {
     max-width: 600px;
     margin: 0 auto;
