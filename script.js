@@ -75,36 +75,36 @@ const products = [
 ];
 
 const fakeReviews = [
-    { name: "ShadowX_99", rating: 5, text: "Legit seller, bought the Rust menu and it's been flawless for weeks. Fast delivery too!", date: "2 days ago", verified: true },
-    { name: "NeonKnight", rating: 5, text: "Was skeptical at first but a3modz is the real deal. Undetected, smooth aimbot, great support on Discord.", date: "5 days ago", verified: true },
-    { name: "ViperzYT", rating: 5, text: "Trusted seller! 3rd purchase already. Scripts work perfectly and updates are quick.", date: "1 week ago", verified: true },
-    { name: "CryptoWraith", rating: 4, text: "Good quality mods, the ESP is clean. Only wish there were more payment options. But overall solid.", date: "1 week ago", verified: true },
-    { name: "RustKing_PL", rating: 5, text: "Best Rust cheats I've used. The thick bullet and no spread are insane. Worth every euro.", date: "2 weeks ago", verified: true },
-    { name: "PixelDemon", rating: 5, text: "Bought the Roblox scripts for Da Hood, works flawlessly. Silent aim is OP. 100% recommended!", date: "2 weeks ago", verified: true },
-    { name: "FrostByte_GG", rating: 5, text: "This seller is goated. Instant delivery, great prices, and the menus are undetected. Don't sleep on a3modz.", date: "3 weeks ago", verified: true },
-    { name: "AceWyvern", rating: 4, text: "Second time buying, always satisfied. Customer service on Discord is super helpful and fast.", date: "3 weeks ago", verified: true },
-    { name: "LunarEclipse", rating: 5, text: "Undetected for months now. The aimbot is smooth and the ESP is crystal clear. Highly recommend!", date: "4 days ago", verified: true },
-    { name: "BlazeItUp", rating: 5, text: "Bro this Rust menu is absolutely cracked. The radar and ESP are game changers. Instant delivery!", date: "6 days ago", verified: true },
-    { name: "Sylas_OP", rating: 5, text: "Bought lifetime for Rust. Best decision ever. Updates come fast and the menu keeps working.", date: "1 week ago", verified: true },
-    { name: "DarkMatterX", rating: 4, text: "Solid scripts for Roblox. Works on Da Hood and Arsenal perfectly. Good value for the price.", date: "1 week ago", verified: true },
-    { name: "PhantomViper", rating: 5, text: "Legit seller, fast response on Discord. The scripts are undetected and work like a charm.", date: "2 weeks ago", verified: true },
-    { name: "Zenitsu_XX", rating: 5, text: "Been using a3modz for 2 months now. Never been banned. The thick bullet on Rust is insane!", date: "2 weeks ago", verified: true },
-    { name: "GhostRecon21", rating: 5, text: "Best cheat provider out there. Period. The quality and support are unmatched.", date: "3 weeks ago", verified: true },
-    { name: "RavenClaw_OP", rating: 5, text: "Roblox scripts are fire! Using for Da Hood and Strucid, both work perfectly. Silent aim is clean.", date: "3 weeks ago", verified: true },
-    { name: "StormBreaker", rating: 4, text: "Good menus, good prices. The ESP features are detailed and the UI is clean. Would give 5 stars if more games supported.", date: "4 weeks ago", verified: true },
-    { name: "IcePhoenix_99", rating: 5, text: "Purchased the Rust menu and it's absolutely insane. The amount of features for the price is crazy good.", date: "4 weeks ago", verified: true },
-    { name: "NightHawk_YT", rating: 5, text: "100% legit. Bought from other sellers before and got scammed. a3modz is the only one I trust now.", date: "1 month ago", verified: true },
-    { name: "TechnoViper", rating: 5, text: "The customer support alone is worth it. They helped me set up in 5 minutes. Scripts work amazing.", date: "1 month ago", verified: true },
-    { name: "WraithX_Pro", rating: 5, text: "Been through dozens of providers. a3modz is the only one that consistently delivers undetected menus. A+", date: "1 month ago", verified: true },
-    { name: "Slayer_OP", rating: 5, text: "Absolute goat seller. The lock target feature on Rust is godlike. Never going back to other providers.", date: "5 weeks ago", verified: true },
-    { name: "CyberPunkGG", rating: 5, text: "Legit as it gets. Friends recommended this place and now I know why. Quality stuff!", date: "5 weeks ago", verified: true },
-    { name: "OmegaStriker", rating: 5, text: "third purchase and still impressed. They actually care about keeping their menus undetected. Trustworthy.", date: "6 weeks ago", verified: true },
-    { name: "ShadowStrike", rating: 5, text: "The Roblox scripts are crazy good. Fisch auto fish works perfectly and the ESP is clean. Big recommend!", date: "6 weeks ago", verified: true },
-    { name: "ThunderBolt_99", rating: 5, text: "Been using the Rust ESP for raiding. Ore ESP makes farming so easy. Worth every cent.", date: "2 months ago", verified: true },
-    { name: "DragonSlayerX", rating: 5, text: "Got the lifetime Rust key. Best investment for any Rust player. The menu keeps getting better with updates.", date: "2 months ago", verified: true },
-    { name: "Maverick_GG", rating: 5, text: "Seller is legit and quick. Bought the Roblox scripts, got my key within minutes. Everything works as advertised.", date: "2 months ago", verified: true },
-    { name: "ZeroHour_X", rating: 5, text: "No cap — best cheat menu I've ever used. The aimbot settings are super customizable. Goated seller.", date: "2 months ago", verified: true },
-    { name: "AlphaWolf_99", rating: 5, text: "6 months strong and still undetected. That says everything. a3modz is the real deal.", date: "3 months ago", verified: true }
+    { name: "Marcus J.", rating: 5, text: "Legit seller, bought the Rust menu and it's been flawless for weeks. Fast delivery too!", date: "2 days ago", verified: true },
+    { name: "Sarah K.", rating: 5, text: "Was skeptical at first but a3modz is the real deal. Undetected, smooth aimbot, great support on Discord.", date: "5 days ago", verified: true },
+    { name: "James Wilson", rating: 5, text: "Trusted seller! 3rd purchase already. Scripts work perfectly and updates are quick.", date: "1 week ago", verified: true },
+    { name: "Alex Chen", rating: 4, text: "Good quality mods, the ESP is clean. Only wish there were more payment options. But overall solid.", date: "1 week ago", verified: true },
+    { name: "Tomáš Novák", rating: 5, text: "Best Rust cheats I've used. The thick bullet and no spread are insane. Worth every euro.", date: "2 weeks ago", verified: true },
+    { name: "Liam O'Brien", rating: 5, text: "Bought the Roblox scripts for Da Hood, works flawlessly. Silent aim is OP. 100% recommended!", date: "2 weeks ago", verified: true },
+    { name: "Jake Thompson", rating: 5, text: "This seller is goated. Instant delivery, great prices, and the menus are undetected. Don't sleep on a3modz.", date: "3 weeks ago", verified: true },
+    { name: "Ryan Martinez", rating: 4, text: "Second time buying, always satisfied. Customer service on Discord is super helpful and fast.", date: "3 weeks ago", verified: true },
+    { name: "Elena Rossi", rating: 5, text: "Undetected for months now. The aimbot is smooth and the ESP is crystal clear. Highly recommend!", date: "4 days ago", verified: true },
+    { name: "Dennis M.", rating: 5, text: "Bro this Rust menu is absolutely cracked. The radar and ESP are game changers. Instant delivery!", date: "6 days ago", verified: true },
+    { name: "Chris Andersen", rating: 5, text: "Bought lifetime for Rust. Best decision ever. Updates come fast and the menu keeps working.", date: "1 week ago", verified: true },
+    { name: "Fatima Al-Rashid", rating: 4, text: "Solid scripts for Roblox. Works on Da Hood and Arsenal perfectly. Good value for the price.", date: "1 week ago", verified: true },
+    { name: "Mike Sullivan", rating: 5, text: "Legit seller, fast response on Discord. The scripts are undetected and work like a charm.", date: "2 weeks ago", verified: true },
+    { name: "Kaito Tanaka", rating: 5, text: "Been using a3modz for 2 months now. Never been banned. The thick bullet on Rust is insane!", date: "2 weeks ago", verified: true },
+    { name: "Daniel Scott", rating: 5, text: "Best cheat provider out there. Period. The quality and support are unmatched.", date: "3 weeks ago", verified: true },
+    { name: "Emma Richardson", rating: 5, text: "Roblox scripts are fire! Using for Da Hood and Strucid, both work perfectly. Silent aim is clean.", date: "3 weeks ago", verified: true },
+    { name: "Oscar Diaz", rating: 4, text: "Good menus, good prices. The ESP features are detailed and the UI is clean. Would give 5 stars if more games supported.", date: "4 weeks ago", verified: true },
+    { name: "Yuki Haramoto", rating: 5, text: "Purchased the Rust menu and it's absolutely insane. The amount of features for the price is crazy good.", date: "4 weeks ago", verified: true },
+    { name: "Nathan Brooks", rating: 5, text: "100% legit. Bought from other sellers before and got scammed. a3modz is the only one I trust now.", date: "1 month ago", verified: true },
+    { name: "David Kim", rating: 5, text: "The customer support alone is worth it. They helped me set up in 5 minutes. Scripts work amazing.", date: "1 month ago", verified: true },
+    { name: "Mohammed Al-Jaber", rating: 5, text: "Been through dozens of providers. a3modz is the only one that consistently delivers undetected menus. A+", date: "1 month ago", verified: true },
+    { name: "Ethan Clarke", rating: 5, text: "Absolute goat seller. The lock target feature on Rust is godlike. Never going back to other providers.", date: "5 weeks ago", verified: true },
+    { name: "Hannah Müller", rating: 5, text: "Legit as it gets. Friends recommended this place and now I know why. Quality stuff!", date: "5 weeks ago", verified: true },
+    { name: "Carlos Garcia", rating: 5, text: "Third purchase and still impressed. They actually care about keeping their menus undetected. Trustworthy.", date: "6 weeks ago", verified: true },
+    { name: "Priya Sharma", rating: 5, text: "The Roblox scripts are crazy good. Fisch auto fish works perfectly and the ESP is clean. Big recommend!", date: "6 weeks ago", verified: true },
+    { name: "Jack Turner", rating: 5, text: "Been using the Rust ESP for raiding. Ore ESP makes farming so easy. Worth every cent.", date: "2 months ago", verified: true },
+    { name: "Lukas Weber", rating: 5, text: "Got the lifetime Rust key. Best investment for any Rust player. The menu keeps getting better with updates.", date: "2 months ago", verified: true },
+    { name: "Sofia Andersson", rating: 5, text: "Seller is legit and quick. Bought the Roblox scripts, got my key within minutes. Everything works as advertised.", date: "2 months ago", verified: true },
+    { name: "Noah Bennett", rating: 5, text: "No cap — best cheat menu I've ever used. The aimbot settings are super customizable. Goated seller.", date: "2 months ago", verified: true },
+    { name: "Viktor Petrov", rating: 5, text: "6 months strong and still undetected. That says everything. a3modz is the real deal.", date: "3 months ago", verified: true }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -118,20 +118,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const reviewForm = document.getElementById('reviewForm');
 
     // Render fake reviews
-    let reviewsShowing = 8;
+    let reviewsShowing = 3;
     if (reviewsGrid) {
         renderReviews(fakeReviews.slice(0, reviewsShowing));
     }
 
-    // Show More button
+    // Show More button - shows ALL reviews on click
     const loadMoreBtn = document.getElementById('loadMoreReviews');
     if (loadMoreBtn) {
         loadMoreBtn.addEventListener('click', () => {
-            reviewsShowing += 8;
-            renderReviews(fakeReviews.slice(0, reviewsShowing));
-            if (reviewsShowing >= fakeReviews.length) {
-                loadMoreBtn.style.display = 'none';
-            }
+            renderReviews(fakeReviews);
+            loadMoreBtn.style.display = 'none';
         });
     }
 
