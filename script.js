@@ -74,6 +74,17 @@ const products = [
     }
 ];
 
+const fakeReviews = [
+    { name: "ShadowX_99", rating: 5, text: "Legit seller, bought the Rust menu and it's been flawless for weeks. Fast delivery too!", date: "2 days ago", verified: true },
+    { name: "NeonKnight", rating: 5, text: "Was skeptical at first but a3modz is the real deal. Undetected, smooth aimbot, great support on Discord.", date: "5 days ago", verified: true },
+    { name: "ViperzYT", rating: 5, text: "Trusted seller! 3rd purchase already. Scripts work perfectly and updates are quick.", date: "1 week ago", verified: true },
+    { name: "CryptoWraith", rating: 4, text: "Good quality mods, the ESP is clean. Only wish there were more payment options. But overall solid.", date: "1 week ago", verified: true },
+    { name: "RustKing_PL", rating: 5, text: "Best Rust cheats I've used. The thick bullet and no spread are insane. Worth every euro.", date: "2 weeks ago", verified: true },
+    { name: "PixelDemon", rating: 5, text: "Bought the Roblox scripts for Da Hood, works flawlessly. Silent aim is OP. 100% recommended!", date: "2 weeks ago", verified: true },
+    { name: "FrostByte_GG", rating: 5, text: "This seller is goated. Instant delivery, great prices, and the menus are undetected. Don't sleep on a3modz.", date: "3 weeks ago", verified: true },
+    { name: "AceWyvern", rating: 4, text: "Second time buying, always satisfied. Customer service on Discord is super helpful and fast.", date: "3 weeks ago", verified: true }
+];
+
 document.addEventListener('DOMContentLoaded', () => {
     const productGrid = document.getElementById('productGrid');
     const modal = document.getElementById('productModal');
@@ -81,6 +92,45 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtn = document.querySelector('.close-modal');
     const mobileBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
+    const reviewsGrid = document.getElementById('reviewsGrid');
+    const reviewForm = document.getElementById('reviewForm');
+
+    // Render fake reviews
+    if (reviewsGrid) {
+        renderReviews(fakeReviews);
+    }
+
+    // Review form handler
+    if (reviewForm) {
+        reviewForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('reviewName').value;
+            const rating = parseInt(document.getElementById('reviewRating').value);
+            const text = document.getElementById('reviewText').value;
+            
+            const newReview = {
+                name: name,
+                rating: rating,
+                text: text,
+                date: 'Just now',
+                verified: true
+            };
+            
+            fakeReviews.unshift(newReview);
+            renderReviews(fakeReviews);
+            reviewForm.reset();
+            
+            // Show success message
+            const btn = reviewForm.querySelector('button');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Review Posted!';
+            btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.style.background = '';
+            }, 2000);
+        });
+    }
 
     // Mobile Menu Toggle
     if (mobileBtn) {
@@ -208,6 +258,26 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.style.paddingRight = '0';
         }
     });
+
+    // Render Reviews
+    function renderReviews(reviews) {
+        reviewsGrid.innerHTML = reviews.map(r => `
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-author">
+                        <div class="review-avatar">${r.name.charAt(0)}</div>
+                        <div>
+                            <div class="review-name">${r.name}</div>
+                            ${r.verified ? '<div class="review-verified"><i class="fas fa-check-circle"></i> Verified Purchase</div>' : ''}
+                        </div>
+                    </div>
+                    <div class="review-stars">${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}</div>
+                </div>
+                <p class="review-text">"${r.text}"</p>
+                <div class="review-date">${r.date}</div>
+            </div>
+        `).join('');
+    }
 
     // Smooth Scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
